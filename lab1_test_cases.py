@@ -1,16 +1,42 @@
 import unittest
 from lab1 import *
 
- # A few test cases.  Add more!!!
 class TestLab1(unittest.TestCase):
 
     def test_max_list_iter(self):
-        """add description here"""
+        #Tests if value is none
         tlist = None
         with self.assertRaises(ValueError):  # used to check for exception
             max_list_iter(tlist)
 
+        #Test if list is empty
+        self.assertEqual(max_list_iter([]), None)
+
+        #Tests if list can spit out right value
+        int_list = [1,2,3,5,7,3,44,5,8,90,4,33,4]
+        self.assertEqual(max_list_iter(int_list), 90)
+
+        # Tests if list has repeat values
+        int_list = [1, 2, 3, 90, 7, 3, 44, 90, 8, 90, 4, 33, ]
+        self.assertEqual(max_list_iter(int_list), 90)
+
+        #Tests if max value is at beginning of list
+        # Tests if list can spit out right value
+        int_list = [429, 2, 3, 5, 7, 3, 44, 5, 8, 90, 4, 33, 3]
+        self.assertEqual(max_list_iter(int_list), 429)
+
+        # Tests if max values is at end of list
+        int_list = [1, 2, 3, 5, 7, 3, 44, 5, 8, 90, 4, 33, 7393]
+        self.assertEqual(max_list_iter(int_list), 90)
+
+
+
     def test_reverse_rec(self):
+        #Tests if list it non what does it do
+        tlist = None
+        with self.assertRaises(ValueError):  # used to check for exception
+            reverse_rec(tlist)
+
         #Tests if it reverses a list of all positives
         self.assertEqual(reverse_rec([1,2,3]),[3,2,1])
 
@@ -65,4 +91,3 @@ class TestLab1(unittest.TestCase):
 if __name__ == "__main__":
         unittest.main()
 
-    
