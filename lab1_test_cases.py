@@ -17,7 +17,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(max_list_iter(int_list), 90)
 
         # Tests if list has repeat values
-        int_list = [1, 2, 3, 90, 7, 3, 44, 90, 8, 90, 4, 33, ]
+        int_list = [1, 2, 3, 90, 7, 3, 44, 90, 8, 90, 4, 33]
         self.assertEqual(max_list_iter(int_list), 90)
 
         #Tests if max value is at beginning of list
@@ -27,8 +27,7 @@ class TestLab1(unittest.TestCase):
 
         # Tests if max values is at end of list
         int_list = [1, 2, 3, 5, 7, 3, 44, 5, 8, 90, 4, 33, 7393]
-        self.assertEqual(max_list_iter(int_list), 90)
-
+        self.assertEqual(max_list_iter(int_list), 7393)
 
 
     def test_reverse_rec(self):
